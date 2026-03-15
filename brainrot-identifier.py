@@ -1,6 +1,6 @@
 import os
 import caer
-import canara
+import canaro
 import numpy as np
 import cv2 as cv
 import gc
@@ -61,7 +61,7 @@ x_train, x_val, y_train, y_val = caer.train_val_split(featureSet, labels, val_ra
 del train
 del featureSet
 del labels
-gc collect()
+gc.collect()
 #run
 
 BATCH_SIZE = 32
@@ -101,8 +101,86 @@ predictions=model.predict(prepare(img))
 print(characters[np.argmax(predictions[0])])
 
 
+#save trained model
+model.save("brainrot_model.keras")
+
+#load trained model
+# from tensorflow.keras.model import load_model
+# model=load_model("brainrot_model.keras")
+
+#take user data base input picture
+def get_valid_image_path():
+    while True:
+        image_path = input("Please enter image path (or q to quit)")
+        if image_path.lower() == 'q':
+            sys.exit("Program terminated by user.")
+        try:
+            if not os.path.isfile(image_path):
+                print(f"Error: 'image_path' not found or is not a file. Please try again :(")
+                continue
+            with Image.open(image_path as img):
+                print(f"Success: Loaded image of format {img.format}, size {img.size}.")
+                return image_path
+        except FileNotFoundError:
+            print(f"Error: The file '{image_path}' doesn't exist. Please check path and try again.")
+        except (IOError, OSError) as e:
+            print(f"Error opening image: {e}. Please check it's valid, unbroken img file and try again.")
+        except Exception as e:
+            print(f"Unexpected error occured: {e}. Please try again!")
+
+if __name__ = "__main__":
+    valid_path = get_valid_image_path()
+    print(f"\nProceeding with image: {valid_path}")
+
+get_valid_image_path()
+
+#preprocess image the same way as training image
+def prepare(img_path):
+    img = cv_imread(img_path)
+
+    img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    img = cv.resize(img, IMG_SIZE)
+
+    img = img/ 255.0 #normalize
+
+    img = img.reshape(-1, IMG_SIZE[0], IMG_SIZE[1], 1)
+    return img
+
+#predict
+img = prepare(image_path)
+predictions = model.predict(img)
+charcaters_index = np.argmax(prediction[0])
+print("Prediction: ", characters[character_index])
+
+#A WEBSITE ATTEMPT
+from flask import Flask
+app = Flask(__name__)
+@app.route("/")
+def hello_world():
+    return "<h>Welcome to Italian Brainrot identifier!</h>"
+    return "<p>Please input your brianrot here: </p>"
+    user_image = "<input type='file' accept='.jpg,.png,.jpeg'></input>"
+    valid_path = user_image
+
+
+#FINALLY RUN
+hello_world()
+image_path = input("Enter image path: ")
+img = prepare(image_path)
+prediction = model.predict(img)
+character_index=np.argmax(prediction[0])
+print("This brainrot is: ", characters[character_index])
+h
+
+
+
+
+
+
+
 #identify which brainrot it is by name
 #identify which brainrot u r by image
 #
 
 
+#grrrrrrrrrr
