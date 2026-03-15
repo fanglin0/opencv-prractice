@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"name": "opencv learning",
+			"path": "."
+		},
+		{
+			"name": "Resources",
+			"path": "../../../opencv-course-master/Resources"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/*.rpyc": true,
+			"**/*.rpa": true,
+			"**/*.rpymc": true,
+			"**/cache/": true
+		}
+	}
+}
