@@ -7,7 +7,7 @@ I used a trained image classification model off Tensorflow to recognize italian 
 
 ## Why I made this project
 
-Italian brainrot's cool. machine learning is cool. I like ceiling
+Italian brainrot's cool. machine learning is cool.
 
 ---
 
