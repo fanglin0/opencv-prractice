@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Brainrot Identifier</title>
+</head>
+<body>
+
+    <h1>Italian Brainrot Identifier</h1>
+
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="image" accept=".jpg,.jpeg,.png" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+
+</body>
+</html>
