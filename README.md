@@ -1,7 +1,7 @@
 # Italian Brainrot Identifier
 
 ##  What this project is
-I used a trained image classification model off Tensorflow to recognize italian brainrot. Trained off <a href="https://www.kaggle.com/datasets/bubblepw/italian-brainrot-images">Bubble PW's amazing dataset and webscraped images to recognize user input. Go try it out!
+I used a trained image classification model off Tensorflow to recognize italian brainrot. Trained off <a href="https://www.kaggle.com/datasets/bubblepw/italian-brainrot-images">Bubble PW's amazing dataset and webscraped images to recognize user input. <a href="https://huggingface.co/spaces/fanglin0/Italian-Brainrot-Identifier">Go try it out!</a>
 
 ---
 
