@@ -19,3 +19,16 @@ I had to learn how to use TensorFlow, Flask for deploying the app and linking to
 Some of the biggest challenges were:
 
 - Learning tensorflow and flask as well as selenium and os
+  
+---
+
+##  HOW TO RUN the microservices 
+1. Webscraper.py
+- download files
+- run the webscraper.py in ur IDE of choice/terminal
+- itll open "firefox" to scrape images (since firefox is better at avoiding antiscrape detection).
+- feel free to change line 15 to ur folder of choice, line 22 to ur query of choice, and line 47 to ur browser of choice
+
+2. opencv 
+- js put the image directory of choice and itll do what needed
+
